@@ -1,0 +1,107 @@
+/* Home.css */
+
+.home-container {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    perspective: 1000px; /* 3D perspective */
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
+  }
+  
+  .carousel-container {
+    margin: 20px 0;
+    transform: rotateY(10deg); /* 3D transformation */
+    animation: slideIn 1s ease-out; /* Slide-in animation */
+  }
+  
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    transform: rotateY(-10deg); /* 3D transformation */
+    animation: fadeInUp 1.5s ease-out 0.5s; /* Fade-in up with delay */
+  }
+  
+  .info-section {
+    text-align: center;
+    margin-top: 40px;
+    transform: rotateX(5deg); /* 3D transformation */
+    animation: fadeIn 2s ease-in; /* Fade-in animation */
+  }
+  
+  .info-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    transform: rotateX(-5deg); /* 3D transformation */
+    animation: bounceIn 1.5s ease-in-out; /* Bounce-in animation */
+  }
+  
+  .info-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .info-section ul li {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    transform: rotateY(5deg); /* 3D transformation */
+    animation: fadeInRight 1s ease-in-out; /* Fade-in right animation */
+  }
+  
+  .carousel-item img {
+    height: 60vh;
+    object-fit: cover;
+    animation: zoomIn 1s ease-in-out; /* Zoom-in animation */
+  }
+  
+  /* Adding transitions for smoother 3D effect */
+  .home-container, .carousel-container, .carousel-caption, .info-section, .info-section h2, .info-section ul li {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-inner {
+    transform-style: preserve-3d; /* Ensure 3D effects apply to children */
+  }
+  
+  /* Hover effects */
+  .carousel-caption:hover {
+    transform: scale(1.05) rotateY(-5deg); /* Scale up on hover */
+  }
+  
+  .info-section ul li:hover {
+    transform: rotateY(0deg); /* Return to flat on hover */
+    color: #ff7e5f; /* Change color on hover */
+  }
+  
+  /* Animations definitions */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+  
+  @keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes fadeInRight {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes zoomIn {
+    from { transform: scale(1.2); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  

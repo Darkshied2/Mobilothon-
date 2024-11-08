@@ -1,0 +1,7 @@
+Flask
+Flask-Bcrypt
+Flask-Cors
+Flask-JWT-Extended
+pymongo
+tensorflow
+numpy
